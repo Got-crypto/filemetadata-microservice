@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({extended:!1}))
 const fileStorage = diskStorage({
   destination: 'uploads',
   filename: (req, file, cb) => {
-    cb(null, `${file.fieldname}_${Date.now()}` )
+    cb(null, `${file.fieldname}_${Date.now()}_${file.originalname}` )
   }
 })
 
